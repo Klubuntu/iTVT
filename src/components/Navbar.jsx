@@ -1,7 +1,7 @@
 "use client";
 
 import React, { use } from "react";
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Image} from "@nextui-org/react";
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Image} from "@heroui/react";
 import getLangData from '@/components/client/getLangData';
 import {Logo} from "./Logo.jsx";
 

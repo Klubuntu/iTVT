@@ -1,7 +1,7 @@
 "use client";
 
 import React, { use, useEffect, useRef } from 'react';
-import { NextUIProvider } from "@nextui-org/react";
+import { HeroUIProvider } from "@heroui/react";
 import getLangData from '@/components/client/getLangData';
 import FirstLoadPopup from '@/components/FirstLoadPopup';
 import Navbar from '@/components/Navbar';
@@ -20,7 +20,7 @@ const Page = () => {
     }, []);
 
     return (
-        <NextUIProvider>
+        <HeroUIProvider>
             <FirstLoadPopup />
             <div className="App no-clickable stop-drag" ref={appRef}>
                 <Navbar />
@@ -38,7 +38,7 @@ const Page = () => {
                     ))}
                 </div>
             </div>
-        </NextUIProvider>
+        </HeroUIProvider>
     );
 };
 

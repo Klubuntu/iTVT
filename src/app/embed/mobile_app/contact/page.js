@@ -1,7 +1,7 @@
 "use client"
 
 import React, { use, useEffect, useRef } from 'react';
-import { NextUIProvider } from "@nextui-org/react";
+import { HeroUIProvider } from "@heroui/react";
 import getLangData from '@/components/client/getLangData';
 import ContactBox from "@/components/ContactBox";
 
@@ -19,7 +19,7 @@ const App = () => {
     }, []);
 
     return (
-        <NextUIProvider>
+        <HeroUIProvider>
             <div className="App no-clickable stop-drag" ref={appRef}>
                 <h2 className="text-center font-bold text-3xl mt-8">{contactText.contact_us}</h2>
                 <div className="flex flex-col justify-center items-center" id="Contact">
@@ -29,7 +29,7 @@ const App = () => {
                 </div>
 
             </div>
-        </NextUIProvider>
+        </HeroUIProvider>
     );
 };
 export default App;

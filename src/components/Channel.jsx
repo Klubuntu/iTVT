@@ -1,5 +1,5 @@
 import React from "react";
-import {Card, CardHeader, CardBody, Divider, Image} from "@nextui-org/react";
+import {Card, CardHeader, CardBody, Divider, Image} from "@heroui/react";
 import Link from "next/link";
 
 export default function (props) {

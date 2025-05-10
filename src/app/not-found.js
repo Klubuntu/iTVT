@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { NextUIProvider } from "@nextui-org/react";
+import { HeroUIProvider } from "@heroui/react";
 import Link from 'next/link';
 import getLangData from '@/components/server/getLangData';
 // import Navbar from '@/components/Navbar';
@@ -12,7 +12,7 @@ export default async function NotFound() {
   const text404 = data.pages["404"]
   const return_text = data.pages.return_page;
   return (
-    <NextUIProvider>
+    <HeroUIProvider>
         <div className="App">
             {/* <Navbar /> */}
             <div className="text-center text-l mt-10">
@@ -20,6 +20,6 @@ export default async function NotFound() {
               <h2 className='text-center text-xl mt-10 mx-5 sm:mx-4 lg:mx-0'>{text404}</h2>
             </div>
         </div>
-    </NextUIProvider>
+    </HeroUIProvider>
   )
 }

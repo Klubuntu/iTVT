@@ -10,12 +10,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@nextui-org/accordion": "^2.2.7",
-    "@nextui-org/card": "^2.2.9",
-    "@nextui-org/navbar": "^2.2.8",
-    "@nextui-org/react": "^2.6.11",
-    "@nextui-org/system": "^2.4.6",
-    "@nextui-org/theme": "^2.4.5",
+    "@heroui/accordion": "2.2.16",
+    "@heroui/card": "2.2.18",
+    "@heroui/navbar": "2.2.17",
+    "@heroui/react": "2.7.8",
+    "@heroui/system": "2.4.15",
+    "@heroui/theme": "2.4.15",
     "hls-video-element": "^1.4.1",
     "hls.js": "^1.5.19",
     "js-cookie": "^3.0.5",
@@ -38,6 +38,12 @@
   "pnpm": {
     "overrides": {
       "@types/react": "19.0.7"
-    }
+    },
+    "ignoredBuiltDependencies": [
+      "@heroui/shared-utils"
+    ],
+    "onlyBuiltDependencies": [
+      "@heroui/shared-utils"
+    ]
   }
 }

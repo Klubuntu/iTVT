@@ -1,5 +1,5 @@
 import React from "react";
-import {Divider, Link} from "@nextui-org/react";
+import {Divider, Link} from "@heroui/react";
 
 export default function ({team, email}) {
   return (

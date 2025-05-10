@@ -1,7 +1,7 @@
 'use client';
 
 import React, { use, useRef, Suspense, useEffect } from 'react';
-import { NextUIProvider } from "@nextui-org/react";
+import { HeroUIProvider } from "@heroui/react";
 import FirstLoadPopup from '@/components/FirstLoadPopup';
 import Navbar from '@/components/Navbar';
 import VideoBox from '@/components/VideoBox';
@@ -25,14 +25,14 @@ const Page = () => {
   }, []);
 
   return (
-    <NextUIProvider>
+    <HeroUIProvider>
       <FirstLoadPopup />
       <div className="App no-clickable stop-drag" ref={appRef}>
         <Navbar />
         <VideoBox name={`iTVT (${playerText})`} src="https://video-itv.itvt.xyz/live/itvt/index.m3u8" />
         <Channels />
       </div>
-    </NextUIProvider>
+    </HeroUIProvider>
   );
 };
 

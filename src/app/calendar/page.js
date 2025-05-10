@@ -1,7 +1,7 @@
 "use client";
 
 import React, {use} from "react";
-import { NextUIProvider } from "@nextui-org/react";
+import { HeroUIProvider } from "@heroui/react";
 import getLangData from '@/components/client/getLangData';
 import Navbar from '@/components/Navbar';
 import AccordionBox from '@/components/AccordionBox';
@@ -17,7 +17,7 @@ const App = () => {
     const calendarText = use(getCalendarText());
 
     return (
-        <NextUIProvider>
+        <HeroUIProvider>
             <div className="App">
                 <Navbar />
                 <h2 className="text-center font-bold text-3xl mt-2">{calendarText.demo_broadcast}</h2>
@@ -27,7 +27,7 @@ const App = () => {
                 <h2 className="text-center font-bold text-3xl mt-5">{calendarText.tomorrow}</h2>
                 <AccordionBox programs={Programs.programsTomorrow}/>
             </div>
-        </NextUIProvider>
+        </HeroUIProvider>
     );
 };
 export default App;

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { use, useEffect, useRef } from 'react';
-import { NextUIProvider } from "@nextui-org/react";
+import { HeroUIProvider } from "@heroui/react";
 import getLangData from '@/components/client/getLangData';
 
 async function getPrivacyText(){
@@ -18,7 +18,7 @@ const Page = () => {
     }, []);
 
     return (
-        <NextUIProvider>
+        <HeroUIProvider>
             <div className="App no-clickable stop-drag" ref={appRef}>
                 <div className="text-center max-w-[1000px] mx-5 sm:mx-4 lg:mx-auto">
                     <h2 className="font-bold text-2xl text-center my-7">{privacyText.about_us.title}</h2>
@@ -39,7 +39,7 @@ const Page = () => {
                     <p>{privacyText.send_your_data.content}</p>
                 </div>
             </div>
-        </NextUIProvider>
+        </HeroUIProvider>
     );
 };
 export default Page;
