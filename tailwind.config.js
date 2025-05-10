@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        'header': '4px 5px 11px 3px rgba(0, 0, 0, 1)', // White shadow
+      },
       width: {
         'vw-header': 'calc(100% - 30px)',
       },
@@ -17,7 +20,7 @@ module.exports = {
       },
     },
   },
-  darkMode: "class",
+  darkMode: "className",
   plugins: [heroui()],
 }
 
