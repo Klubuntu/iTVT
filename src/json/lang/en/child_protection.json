@@ -1,6 +1,6 @@
 {
   "child_protection_policy": {
-    "title": "Child Protection and Abuse Prevention Policy – [Your App Name]",
+    "title": "Child Protection and Abuse Prevention Policy – [iTVT App]",
     "sections": {
       "purpose_scope": {
         "title": "1. Purpose and Scope",
@@ -65,7 +65,12 @@
       },
       "contact": {
         "title": "9. Contact",
-        "content": "For matters related to child safety, contact us at:\n\n📧 safety@[your-app].com\n📞 [support number if applicable]\n\n---\n\n_Document published on: May 10, 2025_\n_[Your Company or Organization Name]_"
+        "content": [
+          "For matters related to child safety,contact us at email: safety@itvt.xyz",
+          "We do not share children’s data with third parties without explicit parental/legal guardian consent.",
+          "Document published on: May 10, 2025",
+          "iTVT | OnerOS Tech"
+        ]
       }
     }
   }

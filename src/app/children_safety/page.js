@@ -8,7 +8,7 @@ import Navbar from '@/components/Navbar';
 
 async function getChildProtectionText() {
     const lang = await getLangData();
-    return lang.pages.child_protection;
+    return lang.pages.child_protection_policy;
 }
 
 const Page = () => {
