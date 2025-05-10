@@ -1,9 +1,7 @@
 import { Inter } from "next/font/google";
-import { cookies } from 'next/headers';
 import "./globals.css";
 import Providers from './providers';
 import { CookiesProvider } from 'next-client-cookies/server';
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
