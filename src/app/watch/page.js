@@ -30,10 +30,16 @@ const App = () => {
                     <div id="mobile-app" className='flex flex-col justify-center items-center'>
                         <h4 className='text-xl mt-5'>{infoText.mobile_app}</h4>
                         <p className='mt-3'>{infoText.mobile.try_app}</p>
-                        <Link href="/static/android/itvt_1.1.apk" download="itvt_1.2.apk">
+                        <Link href="/static/android/itvt_1.1.apk" download="itvt_1.1.apk">
                             <Button color="success" variant="bordered" className='mt-4'>
                             <svg width={64} height={64} fill="#ffffff" viewBox="-6.4 -6.4 44.80 44.80" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>android</title> <path d="M23.35 12.653l2.496-4.323c0.044-0.074 0.070-0.164 0.070-0.26 0-0.287-0.232-0.519-0.519-0.519-0.191 0-0.358 0.103-0.448 0.257l-0.001 0.002-2.527 4.377c-1.887-0.867-4.094-1.373-6.419-1.373s-4.532 0.506-6.517 1.413l0.098-0.040-2.527-4.378c-0.091-0.156-0.259-0.26-0.45-0.26-0.287 0-0.519 0.232-0.519 0.519 0 0.096 0.026 0.185 0.071 0.262l-0.001-0.002 2.496 4.323c-4.286 2.367-7.236 6.697-7.643 11.744l-0.003 0.052h29.991c-0.41-5.099-3.36-9.429-7.57-11.758l-0.076-0.038zM9.098 20.176c-0 0-0 0-0 0-0.69 0-1.249-0.559-1.249-1.249s0.559-1.249 1.249-1.249c0.69 0 1.249 0.559 1.249 1.249v0c-0.001 0.689-0.559 1.248-1.249 1.249h-0zM22.902 20.176c-0 0-0 0-0 0-0.69 0-1.249-0.559-1.249-1.249s0.559-1.249 1.249-1.249c0.69 0 1.249 0.559 1.249 1.249v0c-0.001 0.689-0.559 1.248-1.249 1.249h-0z"></path> </g></svg>
                                 <span className='text-white ml-[-6px] transition-colors'>{infoText.mobile.download}</span>
+                            </Button>
+                        </Link>
+                        <Link href="https://play.google.com/store/apps/details?id=my.itvt">
+                            <Button color="warning" variant="bordered" className='mt-4' disabled={true}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24"><path fill="currentColor" d="m4.886 2l8.813 8.812l2.275-2.275c-3.108-1.885-7.27-4.414-9.142-5.552l-1.254-.76A1.56 1.56 0 0 0 4.886 2M3.541 3.055a1.6 1.6 0 0 0-.033.299v17.413c0 .073.014.142.025.211l8.965-8.966zm13.927 6.39L14.9 12.012l2.523 2.524L19.79 13.1c.454-.278.71-.697.703-1.155c-.007-.45-.263-.85-.7-1.098c-.098-.056-1.01-.608-2.324-1.403M13.7 13.213L4.913 22c.17-.03.341-.08.504-.18l10.512-6.377z"/></svg>
+                                <span className='text-white ml-[-6px] transition-colors'>{infoText.mobile.soon}</span>
                             </Button>
                         </Link>
                     </div>
@@ -50,15 +56,15 @@ const App = () => {
                         <p className='mt-3'>{infoText.playlist.apps_recommended}</p>
                         <p className='mt-5'><b>PC / {infoText.playlist.other_devices}</b></p>
                         <ul className='text-center'>
-                            <li>VLC</li>
-                            <li>MPV</li>
-                            <li>Kodi</li>
+                            <li>- VLC</li>
+                            <li>- MPV</li>
+                            <li>- Kodi</li>
                         </ul>
                         <p className='mt-4'><b>Android</b></p>
                         <ul className='text-center'>
-                            <li>Televizo</li>
-                            <li>IPTV Pro - Alexander Sofronov</li>
-                            <li>IPTV - Alexander Sofronov</li>
+                            <li>- Televizo</li>
+                            <li>- IPTV Pro - Alexander Sofronov</li>
+                            <li>- IPTV - Alexander Sofronov</li>
                         </ul>
                     </div>
                 </div>

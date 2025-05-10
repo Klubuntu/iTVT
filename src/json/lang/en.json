@@ -25,7 +25,8 @@
       "playlist_m3u": "Playlist m3u",
       "mobile": {
         "try_app": "Try the app (Only for Android)",
-        "download": "Download now"
+        "download": "Download now",
+        "soon": "Soon (available on Google Play)"
       },
       "playlist": {
         "use_link": "Use link",
