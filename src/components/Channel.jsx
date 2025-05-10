@@ -17,7 +17,7 @@ export default function (props) {
         </CardHeader>
         <Divider/>
         <CardBody className="flex items-center">
-          <p>{props.description}</p>
+          <p className="text-center">{props.description}</p>
         </CardBody>
       </Card>
     </Link>
