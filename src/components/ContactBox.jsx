@@ -3,7 +3,7 @@ import {Divider, Link} from "@heroui/react";
 
 export default function ({team, email}) {
   return (
-    <div className="w-[80%] sm:w-[400px] flex flex-col items-center mt-20">
+    <div className="w-[80%] sm:w-[400px] flex flex-col items-center mt-12">
       <div className="space-y-1">
         <h4 className="text-medium font-medium">{team}</h4>
       </div>

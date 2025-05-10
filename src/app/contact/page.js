@@ -25,11 +25,12 @@ const App = () => {
             <FirstLoadPopup />
             <div className="App no-clickable stop-drag" ref={appRef}>
                 <Navbar />
-                <h2 className="text-center font-bold text-3xl mt-8">{contactText.contact_us}</h2>
+                <h2 className="text-center font-bold text-3xl mt-10">{contactText.contact_us}</h2>
                 <div className="flex flex-col justify-center items-center" id="Contact">
                     <ContactBox team={contactText.editors} email="redakcja@itvt.xyz" />
                     <ContactBox team={contactText.ads} email="ads@itvt.xyz" />
                     <ContactBox team="IT News" email="itnews@itvt.xyz" />
+                    <ContactBox team={contactText.children_safety} email="safety@itvt.xyz" />
                 </div>
 
             </div>
