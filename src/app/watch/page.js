@@ -56,15 +56,15 @@ const App = () => {
                         <p className='mt-3'>{infoText.playlist.apps_recommended}</p>
                         <p className='mt-5'><b>PC / {infoText.playlist.other_devices}</b></p>
                         <ul className='text-center'>
-                            <li>- VLC</li>
-                            <li>- MPV</li>
-                            <li>- Kodi</li>
+                            <li>- VLC <Link href="https://www.videolan.org/vlc/" className='text-orange-400'>(Download here)</Link></li>
+                            <li>- MPV <Link href="https://mpv.io/installation/" className='text-purple-400'>(Download here)</Link></li>
+                            <li>- Kodi <Link href="https://kodi.tv/download/" className='text-blue-400'>(Download here)</Link></li>
                         </ul>
                         <p className='mt-4'><b>Android</b></p>
-                        <ul className='text-center'>
-                            <li>- Televizo</li>
+                        <ul className='text-center'>https://www.videolan.org/vlc/
+                            <li>- Televizo  <Link href="https://play.google.com/store/apps/details?id=com.ottplay.ottplay" className='text-blue-600'>(Download here)</Link></li>
                             <li>- IPTV Pro - Alexander Sofronov</li>
-                            <li>- IPTV - Alexander Sofronov</li>
+                            <li>- IPTV - Alexander Sofronov <Link href="https://play.google.com/store/apps/details?id=ru.iptvremote.android.iptv" className='text-blue-600'>(Download here)</Link></li>
                         </ul>
                     </div>
                 </div>
