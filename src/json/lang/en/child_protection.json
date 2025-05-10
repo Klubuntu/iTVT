@@ -1,0 +1,72 @@
+{
+  "child_protection_policy": {
+    "title": "Child Protection and Abuse Prevention Policy – [Your App Name]",
+    "sections": {
+      "purpose_scope": {
+        "title": "1. Purpose and Scope",
+        "content": "This policy aims to ensure the safety of children using our app and to prevent sexual abuse and other violations of their rights. It applies to all users, employees, moderators, and service providers working with our app, in accordance with the [Google Play Families Policy](https://support.google.com/googleplay/android-developer/answer/9893335)."
+      },
+      "responsibilities": {
+        "title": "2. Responsibilities",
+        "content": [
+          "Ensure that app content and features are appropriate for children (if the app is directed to or accessible by children).",
+          "Comply with applicable child protection and privacy regulations (e.g., GDPR, COPPA).",
+          "Implement effective content moderation and abuse reporting mechanisms."
+        ]
+      },
+      "prohibited": {
+        "title": "3. Prohibited Content and Actions",
+        "content": [
+          "Content that sexualizes or is otherwise inappropriate towards minors.",
+          "Violent, degrading, or exploitative content involving children.",
+          "Collection of personal data from children without parental/legal guardian consent (if applicable).",
+          "Encouraging children to contact unknown individuals outside the app."
+        ]
+      },
+      "reporting": {
+        "title": "4. Reporting and Response to Abuse",
+        "content": [
+          "All users can report:",
+          "- Inappropriate content,",
+          "- Abuse,",
+          "- Suspicious accounts or behavior.",
+          "Reports are reviewed within 24 hours by our safety team. If a violation is confirmed:",
+          "- Content is removed,",
+          "- The user account may be suspended or banned,",
+          "- The case may be reported to the authorities."
+        ]
+      },
+      "moderation": {
+        "title": "5. Content Control and Moderation",
+        "content": [
+          "User-generated content (UGC) is subject to automated and manual moderation.",
+          "Children are not allowed to publicly share personal data (e.g., full names, facial images, contact numbers)."
+        ]
+      },
+      "training": {
+        "title": "6. Education and Training",
+        "content": [
+          "All team members (including moderators and content creators) are regularly trained on:",
+          "- Digital child safety,",
+          "- Identifying and responding to threats,",
+          "- Standards compliant with the Google Play Families Policy."
+        ]
+      },
+      "data_protection": {
+        "title": "7. Children’s Data Storage and Protection",
+        "content": [
+          "Children’s data, if collected, is minimized and stored in line with privacy best practices.",
+          "We do not share children’s data with third parties without explicit parental/legal guardian consent."
+        ]
+      },
+      "review": {
+        "title": "8. Policy Review and Updates",
+        "content": "This policy is reviewed at least once every 12 months and updated as necessary to reflect changes in regulations or Google Play requirements."
+      },
+      "contact": {
+        "title": "9. Contact",
+        "content": "For matters related to child safety, contact us at:\n\n📧 safety@[your-app].com\n📞 [support number if applicable]\n\n---\n\n_Document published on: May 10, 2025_\n_[Your Company or Organization Name]_"
+      }
+    }
+  }
+}
