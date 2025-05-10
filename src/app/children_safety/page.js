@@ -1,33 +1,53 @@
 "use client";
 
-import React, { use, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { HeroUIProvider } from "@heroui/react";
-import getLangData from '@/components/client/getLangData';
 import FirstLoadPopup from '@/components/FirstLoadPopup';
-import Navbar from '@/components/Navbar';
+import NavbarWrapper from '@/components/NavBar/NavbarWrapper';
 
-async function getChildProtectionText() {
-    const lang = await getLangData();
-    return lang.pages.child_protection_policy;
-}
+import { useLangData } from '@/components/client/useLangData';
+import { fetchHeaderText } from '@/app/actions/fetchHeaderText';
 
 const Page = () => {
     const appRef = useRef();
-    const policyText = use(getChildProtectionText());
+    const lang = useLangData();
+    const [childPolicyText, setChildPolicyText] = useState('');
+    const [headerText, setHeaderText] = useState(null);
 
     useEffect(() => {
-        appRef.current.classList.remove("no-clickable", "stop-drag");
-    }, []);
+        // Ensure playerText is available once lang is ready
+        if (!lang) return;
+        if (lang && lang.pages?.child_protection_policy) {
+            setChildPolicyText(lang.pages.child_protection_policy);
+        }
+
+        const loadHeaderText = async () => {
+            const text = await fetchHeaderText();
+            setHeaderText(text);
+        };
+
+        loadHeaderText();
+    }, [lang]);
+    
+    useEffect(() => {
+        if (appRef.current) {
+            appRef.current.classList.remove('no-clickable', 'stop-drag');
+        }
+    }, [headerText]);
+
+    if (!headerText || !childPolicyText) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <HeroUIProvider>
             <FirstLoadPopup />
             <div className="App no-clickable stop-drag" ref={appRef}>
-                <Navbar />
+                <NavbarWrapper headerText={headerText} />
                 <div className="text-center max-w-[1000px] mx-5 sm:mx-4 lg:mx-auto">
-                    <h2 className="font-bold text-2xl text-center my-7">{policyText.title}</h2>
+                    <h2 className="font-bold text-2xl text-center my-7">{childPolicyText.title}</h2>
 
-                    {Object.values(policyText.sections).map((section, i) => (
+                    {Object.values(childPolicyText.sections).map((section, i) => (
                         <div key={i}>
                             <h3 className="font-bold text-xl mt-8 mb-4">{section.title}</h3>
                             {Array.isArray(section.content)

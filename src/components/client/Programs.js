@@ -4,11 +4,11 @@ class Programs {
   ];
 
   static programsToday = [
-    { title: "Brak", description: "Soon" },
+    { title: "Empty", description: "Soon" },
   ];
 
   static programsTomorrow = [
-    { title: "Brak", description: "Soon" },
+    { title: "Empty", description: "Soon" },
   ];
 }
 

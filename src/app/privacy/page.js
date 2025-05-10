@@ -1,29 +1,50 @@
 "use client";
 
-import React, { use, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { HeroUIProvider } from "@heroui/react";
-import getLangData from '@/components/client/getLangData';
 import FirstLoadPopup from '@/components/FirstLoadPopup';
-import Navbar from '@/components/Navbar';
+import NavbarWrapper from '@/components/NavBar/NavbarWrapper';
 
-async function getPrivacyText(){
-    const lang = await getLangData();
-    return lang.pages.privacy_policy;
-}
+import { useLangData } from '@/components/client/useLangData';
+import { fetchHeaderText } from '@/app/actions/fetchHeaderText';
+
 
 const Page = () => {
     const appRef = useRef();
-    const privacyText = use(getPrivacyText());
+    const lang = useLangData();
+    const [privacyText, setPrivacyText] = useState('');
+    const [headerText, setHeaderText] = useState(null);
 
     useEffect(() => {
-        appRef.current.classList.remove("no-clickable", "stop-drag")
-    }, []);
+        if (!lang) return;
+        if (lang && lang.pages?.privacy_policy) {
+            setPrivacyText(lang.pages.privacy_policy);
+        }
+
+        const loadHeaderText = async () => {
+            const text = await fetchHeaderText();
+            setHeaderText(text);
+        };
+
+        loadHeaderText();
+    }, [lang]);
+    
+    useEffect(() => {
+        if (appRef.current) {
+        appRef.current.classList.remove('no-clickable', 'stop-drag');
+        }
+    }, [headerText]);
+
+    if (!headerText || !privacyText) {
+        return <div>Loading...</div>;
+    }
+
 
     return (
         <HeroUIProvider>
             <FirstLoadPopup />
             <div className="App no-clickable stop-drag" ref={appRef}>
-                <Navbar />
+                <NavbarWrapper headerText={headerText}/>
                 <div className="text-center max-w-[1000px] mx-5 sm:mx-4 lg:mx-auto">
                     <h2 className="font-bold text-2xl text-center my-7">{privacyText.about_us.title}</h2>
                     <p>{privacyText.about_us.content}: <a href="https://hub.itvt.xyz/watch">https://hub.itvt.xyz/watch</a></p>

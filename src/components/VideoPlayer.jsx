@@ -42,7 +42,7 @@ const VideoPlayer = () => {
       };
 
       xhr.onerror = function () {
-        callback(false, err);
+        callback(false, new Error("Network error"));
       };
 
       xhr.send();

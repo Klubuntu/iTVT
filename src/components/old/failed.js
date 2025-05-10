@@ -152,12 +152,12 @@ const VideoPlayer = ({ src }) => {
 
     if (controls && targetElement) {
       targetElement.style.position = 'absolute';
-      targetElement.innerHTML = `<div class="video-controls">${controls.innerHTML}</div>`;
+      targetElement.innerHTML = `<div className="video-controls">${controls.innerHTML}</div>`;
 
-      addEventListeners(targetElement.getElementsByClassName('video-replay'), '.video-replay');
-      addEventListeners(targetElement.getElementsByClassName('video-play'), '.video-play');
-      addEventListeners(targetElement.getElementsByClassName('video-forward'), '.video-forward');
-      addEventListeners(targetElement.getElementsByClassName('video-fs'), '.video-fs');
+      addEventListeners(targetElement.getElementsByclassNameName('video-replay'), '.video-replay');
+      addEventListeners(targetElement.getElementsByclassNameName('video-play'), '.video-play');
+      addEventListeners(targetElement.getElementsByclassNameName('video-forward'), '.video-forward');
+      addEventListeners(targetElement.getElementsByclassNameName('video-fs'), '.video-fs');
     } else {
       console.error('Controls or target element not found');
     }

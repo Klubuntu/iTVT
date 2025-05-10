@@ -2,7 +2,7 @@
 
 import React, { use, useEffect, useRef } from 'react';
 import { HeroUIProvider } from "@heroui/react";
-import getLangData from '@/components/client/getLangData';
+import getLangData from '@/components/client/useLangData';
 import ContactBox from "@/components/ContactBox";
 
 async function getContactText(){

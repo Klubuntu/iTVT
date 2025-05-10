@@ -128,7 +128,7 @@ const VideoPlayer = forwardRef((props, ref) => {
     
         if (controls && targetElement) {
             targetElement.style.width = "100%";
-            targetElement.innerHTML = `<div class="video-controls">${controls.innerHTML}</div>`;
+            targetElement.innerHTML = `<div className="video-controls">${controls.innerHTML}</div>`;
     
             targetElement.querySelectorAll('.video-replay').forEach(el => {
                 el.removeEventListener('click', handleReplay);

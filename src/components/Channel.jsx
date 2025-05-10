@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function (props) {
   return (
     <Link href={props.url}>
-      <Card className="max-w-[250px] mx-4 max-lg:w-full max-lg:my-3 hover:opacity-55 cursor-pointer">
+      <Card className="max-w-[250px] mx-4 max-lg:w-full max-lg:my-3 hover:opacity-60 cursor-pointer">
         <CardHeader className="flex items-center justify-center gap-3">
           <Image
             alt="channel img"

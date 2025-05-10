@@ -2,7 +2,7 @@
 
 import React, {use} from "react";
 import { HeroUIProvider } from "@heroui/react";
-import getLangData from '@/components/client/getLangData';
+import getLangData from '@/components/client/useLangData';
 import AccordionBox from '@/components/AccordionBox';
 import Programs from '@/components/client/Programs';
 
