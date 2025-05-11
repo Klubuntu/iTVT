@@ -15,7 +15,9 @@ const App = () => {
     useEffect(() => {
         if (!lang) return;
         if (lang && lang.pages?.contact) {
-            setContactText(lang.pages.contact);
+            setTimeout(() => {
+                setContactText(lang.pages.contact);
+            }, 600);  
         }
     }, [lang]);
 

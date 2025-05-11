@@ -17,7 +17,9 @@ const App = () => {
     useEffect(() => {
         if (!lang) return;
         if (lang && lang.pages?.tv_calendar) {
-            setCalendarText(lang.pages.tv_calendar);
+            setTimeout(() => {
+                setCalendarText(lang.pages.tv_calendar);
+            }, 600);  
         }
     }, [lang]);
 

@@ -14,7 +14,9 @@ const Page = () => {
     useEffect(() => {
         if (!lang) return;
         if (lang && lang.pages?.privacy_policy) {
-            setPrivacyText(lang.pages.privacy_policy);
+            setTimeout(() => {
+                setPrivacyText(lang.pages.privacy_policy);
+            }, 600);
         }
     }, [lang]);
 
