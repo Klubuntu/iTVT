@@ -26,7 +26,8 @@
       "mobile": {
         "try_app": "Wypróbuj aplikację (tylko na Androida)",
         "download": "Pobierz teraz",
-        "soon": "Wkrótce (dostępne w Google Play)"
+        "soon": "Wkrótce (dostępne w Google Play)",
+        "vod_info": "VOD jest dostępne"
       },
       "playlist": {
         "use_link": "Użyj linku",

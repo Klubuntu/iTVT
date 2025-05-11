@@ -26,7 +26,8 @@
       "mobile": {
         "try_app": "Try the app (Only for Android)",
         "download": "Download now",
-        "soon": "Soon (available on Google Play)"
+        "soon": "Soon (available on Google Play)",
+        "vod_info": "VOD available"
       },
       "playlist": {
         "use_link": "Use link",

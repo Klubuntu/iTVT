@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useEffect, useCallback } from 'react';
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Image } from '@heroui/react';
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button } from '@heroui/react';
 import { Logo } from '../Logo';
 
 function NavbarBlock({ headerText }) {
@@ -27,7 +27,7 @@ function NavbarBlock({ headerText }) {
 
   return (
     <Navbar
-      className={`m-4 rounded-md w-vw-header transition-colors duration-300 shadow-header ${
+      className={`min-w-96 m-4 rounded-md w-vw-header transition-colors duration-300 shadow-header ${
         scrolled ? 'bg-zinc-900' : 'bg-zinc-800'
       }`}
     >
@@ -39,6 +39,16 @@ function NavbarBlock({ headerText }) {
       </NavbarBrand>
 
       {/* Mobile Layout */}
+      <NavbarContent className="flex mobile:hidden gap-4 relative top-[2.5px]" justify="center">
+        <NavbarItem>
+          <Link href="https://odysee.itvt.xyz">
+              <Button color="blue" variant="bordered">
+              <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24"><path fill="white" d="m4 4l1.625 3.25q.175.35.5.55t.7.2q.75 0 1.15-.638t.05-1.312L7 4h2l1.625 3.25q.175.35.5.55t.7.2q.75 0 1.15-.638t.05-1.312L12 4h2l1.625 3.25q.175.35.5.55t.7.2q.75 0 1.15-.638t.05-1.312L17 4h3q.825 0 1.413.587T22 6v12q0 .825-.587 1.413T20 20H4q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4m0 6v8h16v-8zm0 0v8z"/></svg>
+                  <span className='text-white ml-[-6px] transition-colors'>VOD now available</span>
+              </Button>
+          </Link>
+        </NavbarItem>
+      </NavbarContent>
       {/* <NavbarContent className="flex mobile:hidden gap-4 relative top-[2.5px]" justify="center">
         <NavbarItem>
           <Link color="foreground" href="/calendar">
