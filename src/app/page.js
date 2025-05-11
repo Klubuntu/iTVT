@@ -5,7 +5,7 @@ import { HeroUIProvider } from "@heroui/react";
 import FirstLoadPopup from '@/components/FirstLoadPopup';
 import NavbarWrapper from '@/components/NavBar/NavbarWrapper';
 import VideoBox from '@/components/VideoBox';
-import Channels from '@/components/Channels';
+import ChannelsPlayer from '@/components/ChannelsPlayer';
 
 import { useLangData } from '@/components/client/useLangData';
 import { fetchHeaderText } from '@/app/actions/fetchHeaderText';
@@ -47,7 +47,7 @@ const Page = () => {
       <div className="App no-clickable stop-drag" ref={appRef}>
         <NavbarWrapper headerText={headerText} />
         <VideoBox name={`iTVT (${playerText})`} src="https://video-itv.itvt.xyz/live/itvt/index.m3u8" />
-        <Channels />
+        <ChannelsPlayer />
       </div>
     </HeroUIProvider>
   );
