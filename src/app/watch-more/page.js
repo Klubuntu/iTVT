@@ -81,7 +81,7 @@ const Page = () => {
                             <li>- Kodi <Link href="https://kodi.tv/download/" className='text-gray-500'>(Download here)</Link></li>
                         </ul>
                         <p className='mt-4'><b>Android</b></p>
-                        <ul className='text-center'>
+                        <ul className='text-center max-mobile:mb-16'>
                             <li>- Televizo  <Link href="https://play.google.com/store/apps/details?id=com.ottplay.ottplay" className='text-gray-500'>(Download here)</Link></li>
                             <li>- IPTV Pro - Alexander Sofronov</li>
                             <li>- IPTV - Alexander Sofronov <Link href="https://play.google.com/store/apps/details?id=ru.iptvremote.android.iptv" className='text-gray-500'>(Download here)</Link></li>
