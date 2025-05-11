@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { HeroUIProvider } from "@heroui/react";
 import FirstLoadPopup from '@/components/FirstLoadPopup';
-import NavbarWrapper from '@/components/Navbar/NavbarWrapper';
+import NavbarWrapper from '@/components/NavBar/wrapper';
 import VideoBox from '@/components/VideoBox';
 import ChannelsPlayer from '@/components/ChannelsPlayer';
 

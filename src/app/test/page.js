@@ -1,5 +1,5 @@
 import React from 'react';
-import NavbarWrapper from '@/components/NavBar/NavbarWrapper'; // Import your wrapper component
+import NavbarWrapper from '@/components/NavBar/wrapper'; // Import your wrapper component
 import { fetchHeaderText } from '@/app/actions/fetchHeaderText'; // Import the server action
 
 // This is the main page component in the App Directory

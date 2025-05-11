@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Next13ProgressBar } from 'next13-progressbar';
 import { useCookies } from 'next-client-cookies';
-import MobileMenuBlock from "@/components/NavBar/MobileMenuBlock";
+import MobileMenuBlock from "@/components/NavBar/mobilemenublock";
 
 const Providers = ({ children }) => {
   const cookies = useCookies();

@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { HeroUIProvider, Button } from "@heroui/react";
 import Link from 'next/link';
 import FirstLoadPopup from '@/components/FirstLoadPopup';
-import NavbarWrapper from '@/components/Navbar/NavbarWrapper';
+import NavbarWrapper from '@/components/NavBar/wrapper';
 
 import { useLangData } from '@/components/client/useLangData';
 import { fetchHeaderText } from '@/app/actions/fetchHeaderText';

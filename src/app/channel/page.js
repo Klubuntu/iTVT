@@ -6,7 +6,7 @@ import { HeroUIProvider } from '@heroui/react';
 import { useLangData } from '@/components/client/useLangData';
 import { fetchHeaderText } from '@/app/actions/fetchHeaderText';
 import FirstLoadPopup from '@/components/FirstLoadPopup';
-import NavbarWrapper from '@/components/NavBar/NavbarWrapper';
+import NavbarWrapper from '@/components/NavBar/wrapper';
 import Channels from '@/components/Channels';
 
 const Page = () => {

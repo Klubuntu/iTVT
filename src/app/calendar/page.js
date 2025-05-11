@@ -2,7 +2,7 @@
 
 import React, {useRef, useState, useEffect} from "react";
 import { HeroUIProvider } from "@heroui/react";
-import NavbarWrapper from "@/components/NavBar/NavbarWrapper";
+import NavbarWrapper from "@/components/NavBar/wrapper";
 import AccordionBox from '@/components/AccordionBox';
 import Programs from '@/components/client/Programs';
 

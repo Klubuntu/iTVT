@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import NavbarBlock from './NavbarBlock';
+import NavbarBlock from './block';
 
 const NavbarWrapper = ({ headerText }) => {
   return <NavbarBlock headerText={headerText} />;
