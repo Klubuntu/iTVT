@@ -1,0 +1,5 @@
+/* Remove rounded corners for the media control bar */
+media-chrome .media-control-bar,
+media-chrome .media-control-bar * {
+  border-radius: 0 !important;
+}

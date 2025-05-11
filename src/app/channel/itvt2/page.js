@@ -48,7 +48,7 @@ const Page = () => {
       <FirstLoadPopup />
       <div className="App no-clickable stop-drag" ref={appRef}>
         <NavbarWrapper headerText={headerText} />
-        <VideoBox name={`iTVT Now (${playerText})`} src="https://video-itv.itvt.xyz/live/itvt2.m3u8" />
+        <VideoBox name={`iTVT Now (${playerText})`} src="https://video-itv.itvt.xyz/live/itvt2/index.m3u8" />
         <ChannelsPlayer />
       </div>
     </HeroUIProvider>

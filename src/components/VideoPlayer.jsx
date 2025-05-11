@@ -1,5 +1,6 @@
 "use client";
 
+import styles from '@/styles/videoplayer.module.css';
 import React, { useRef, useState, useEffect, forwardRef } from "react";
 import "hls-video-element/react";
 import "media-chrome/react";
@@ -90,7 +91,7 @@ const VideoPlayer = () => {
                 </media-rendition-menu>
               </media-settings-menu-item>
             </media-settings-menu>
-            <MediaControlBar mediaController="mc" className="bg-black/70 backdrop-blur">
+            <MediaControlBar mediaController="mc" className={`bg-black/70 backdrop-blur ${styles.noRoundedControlBar}`}>
               <MediaLiveButton></MediaLiveButton>
               <MediaPlayButton></MediaPlayButton>
               <MediaSeekBackwardButton></MediaSeekBackwardButton>
@@ -100,7 +101,7 @@ const VideoPlayer = () => {
               <MediaVolumeRange></MediaVolumeRange>
               <MediaPipButton></MediaPipButton>
               <MediaFullscreenButton></MediaFullscreenButton>
-              <media-settings-menu-button></media-settings-menu-button>
+              <media-settings-menu-button className="hidden"></media-settings-menu-button>
             </MediaControlBar>
           </MediaController>
         </>
