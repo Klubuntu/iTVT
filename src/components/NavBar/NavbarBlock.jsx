@@ -28,7 +28,7 @@ function NavbarBlock({ headerText }) {
   return (
     <Navbar
       className={`m-4 rounded-md w-vw-header transition-colors duration-300 shadow-header ${
-        scrolled ? 'bg-red-400' : 'bg-zinc-800'
+        scrolled ? 'bg-zinc-900' : 'bg-zinc-800'
       }`}
     >
       <NavbarBrand>
@@ -39,7 +39,7 @@ function NavbarBlock({ headerText }) {
       </NavbarBrand>
 
       {/* Mobile Layout */}
-      <NavbarContent className="flex mobile:hidden gap-4 relative top-[2.5px]" justify="center">
+      {/* <NavbarContent className="flex mobile:hidden gap-4 relative top-[2.5px]" justify="center">
         <NavbarItem>
           <Link color="foreground" href="/calendar">
             <Image src="/static/icons/calendar.svg" width={30} />
@@ -65,7 +65,7 @@ function NavbarBlock({ headerText }) {
             <Image src="/static/icons/email.svg" width={30} />
           </Link>
         </NavbarItem>
-      </NavbarContent>
+      </NavbarContent> */}
 
       {/* Desktop Layout */}
       <NavbarContent className="hidden mobile:flex gap-4" justify="center">
