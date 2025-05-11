@@ -17,7 +17,7 @@ const Page = () => {
   const [headerText, setHeaderText] = useState(null);
 
   useEffect(() => {
-    // Ensure playerText is available once lang is ready
+    
     if (!lang) return;
     if (lang && lang.pages?.player?.watch_broadcast) {
       setPlayerText(lang.pages.player.watch_broadcast);

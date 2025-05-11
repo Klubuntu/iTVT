@@ -1,22 +1,23 @@
 "use client";
 
-import React, { use, useEffect, useRef } from 'react';
+import "@/styles/hideMenu.css";
+import React, { useEffect, useRef } from 'react';
 import {HeroUIProvider} from "@heroui/react";
-import getLangData from '@/components/client/useLangData';
 import Channels from '@/components/Channels';
 
-async function getChannelsText(){
-  const lang = await getLangData();
-  return lang.pages.channel;
-}
-
+import { useLangData } from '@/components/client/useLangData';
 const Page = () => {
   const appRef = useRef();
-  const channelsText = use(getChannelsText());
+  const lang = useLangData();
+  const channelsText = lang.pages?.channel;
 
   useEffect(() => {
-    appRef.current.classList.remove("no-clickable", "stop-drag");
-  }, []);
+    if (!lang) return;
+  }, [lang]);
+
+  if (!lang) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <HeroUIProvider>

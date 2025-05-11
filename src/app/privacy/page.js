@@ -31,7 +31,7 @@ const Page = () => {
     
     useEffect(() => {
         if (appRef.current) {
-        appRef.current.classList.remove('no-clickable', 'stop-drag');
+            appRef.current.classList.remove('no-clickable', 'stop-drag');
         }
     }, [headerText]);
 

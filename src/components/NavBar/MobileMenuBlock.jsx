@@ -34,7 +34,7 @@ function MobileMenuBlock() {
   };
 
   return (
-    <Navbar className="select-none mobile:hidden m-4 rounded-md w-vw-header transition-colors duration-300 shadow-heade bg-zinc-900 fixed top-auto bottom-0 left-0 right-0 mx-auto mb-6">
+    <Navbar id="mobileMenu" className="select-none mobile:hidden m-4 rounded-md w-vw-header transition-colors duration-300 shadow-heade bg-zinc-900 fixed top-auto bottom-0 left-0 right-0 mx-auto mb-6">
       {/* Mobile Layout */}
       <NavbarContent className="flex gap-4 justify-between items-center w-full">
         {/* Navbar Items with Ripple Effect */}

@@ -1,7 +1,7 @@
 import React from "react";
-import {Divider, Link} from "@heroui/react";
+import { Divider, Link } from "@heroui/react";
 
-export default function ({team, email}) {
+export default function ({ team, email, text_email }) {
   return (
     <div className="w-[80%] sm:w-[400px] flex flex-col items-center mt-12">
       <div className="space-y-1">
@@ -9,7 +9,12 @@ export default function ({team, email}) {
       </div>
       <Divider className="my-4" />
       <div className="flex h-5 items-center space-x-4 text-small">
-        <div>Email: <Link href={"mailto:" + email}>{email}</Link></div>
+          Email:{" "}
+          {email ? (
+            <Link href={"mailto:" + email}>{email}</Link>
+          ) : (
+            <p className="text-blue-500 mx-1">{text_email || "No email provided"}</p>
+          )}
       </div>
     </div>
   );

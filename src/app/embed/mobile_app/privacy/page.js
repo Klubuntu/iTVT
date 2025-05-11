@@ -1,28 +1,33 @@
 "use client";
 
-import React, { use, useEffect, useRef } from 'react';
+import "@/styles/hideMenu.css";
+import React, { useState, useEffect, useRef } from 'react';
 import { HeroUIProvider } from "@heroui/react";
-import getLangData from '@/components/client/useLangData';
 
-async function getPrivacyText(){
-    const lang = await getLangData();
-    return lang.pages.privacy_policy;
-}
+import { useLangData } from '@/components/client/useLangData';
 
 const Page = () => {
     const appRef = useRef();
-    const privacyText = use(getPrivacyText());
+    const lang = useLangData();
+    const [privacyText, setPrivacyText] = useState('');
 
     useEffect(() => {
-        appRef.current.classList.remove("no-clickable", "stop-drag")
-    }, []);
+        if (!lang) return;
+        if (lang && lang.pages?.privacy_policy) {
+            setPrivacyText(lang.pages.privacy_policy);
+        }
+    }, [lang]);
+
+    if (!privacyText) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <HeroUIProvider>
             <div className="App no-clickable stop-drag" ref={appRef}>
                 <div className="text-center max-w-[1000px] mx-5 sm:mx-4 lg:mx-auto">
                     <h2 className="font-bold text-2xl text-center my-7">{privacyText.about_us.title}</h2>
-                    <p>{privacyText.about_us.content}: https://hub.itvt.xyz</p>
+                    <p>{privacyText.about_us.content}: <span className="text-blue-500 clickable-child select">hub.itvt.xyz/watch-more</span></p>
                     <h2 className="font-bold text-2xl text-center my-7">{privacyText.media.title}</h2>
                     <p>{privacyText.media.content}</p>
                     <h2 className="font-bold text-2xl text-center my-7">{privacyText.cookies.title}</h2>

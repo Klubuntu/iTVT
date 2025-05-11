@@ -15,7 +15,7 @@ const Page = () => {
     const [headerText, setHeaderText] = useState(null);
 
     useEffect(() => {
-        // Ensure playerText is available once lang is ready
+        
         if (!lang) return;
         if (lang && lang.pages?.child_protection_policy) {
             setChildPolicyText(lang.pages.child_protection_policy);

@@ -41,7 +41,7 @@
     "privacy_policy": {
       "about_us": {
         "title": "Kim jesteśmy",
-        "content": "Jesteśmy serwisem streamingowym, który oferuje na bieżąco dostęp do kanałów z iTVT Group. Dostęp do naszej aplikacji można uzyskać poprzez stronę internetową: https://hub.itvt.xyz. Można również skorzystać na urządzeniach mobilnych z aplikacji iTVT, którą znajdziesz w sekcji pobierania"
+        "content": "Jesteśmy serwisem streamingowym, który oferuje na bieżąco dostęp do kanałów z iTVT Group. Dostęp do naszej aplikacji można uzyskać poprzez stronę internetową. Można również skorzystać na urządzeniach mobilnych z aplikacji iTVT, którą znajdziesz w sekcji pobierania"
       },
       "media": {
         "title": "Media",
@@ -71,7 +71,7 @@
       },
       "send_your_data": {
         "title": "Gdzie wysłamy twoje dane ?",
-        "content": "Twoje informacje takie jak Adres IP, czy Wersja Systemu oraz przeglądarki, mogą zostać wysłane do administratora strony w celu optymalizacji i stabilności w działaniu strony."
+        "content": "Twoje informacje takie jak Adres IP, czy Wersja Systemu oraz przeglądarki, mogą zostać wysłane do administratora strony w celu optymalizacji i stabilności w działania aplikacji."
       }
     },
     "child_protection_policy": {

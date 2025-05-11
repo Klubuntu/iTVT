@@ -1,0 +1,10 @@
+#mobileMenu{
+    display: none;
+}
+
+.clickable-child {
+  pointer-events: auto; /* Enable pointer events on the child */
+  padding: 10px;
+  cursor: text; /* Visual indicator that the item is draggable */
+  z-index: 10; /* Ensure it's on top */
+}
