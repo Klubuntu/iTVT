@@ -38,7 +38,7 @@ function MobileMenuBlock() {
       {/* Mobile Layout */}
       <NavbarContent className="flex gap-4 justify-between items-center w-full">
         {/* Navbar Items with Ripple Effect */}
-        {['calendar', 'channel', 'watch-more', 'privacy', 'contact'].map((item) => (
+        {['calendar', 'channel', 'privacy', 'contact'].map((item) => (
         <NavbarItem
             key={item}
             className={styles.button}

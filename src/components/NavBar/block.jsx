@@ -63,11 +63,6 @@ function NavbarBlock({ headerText }) {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="/watch-more">
-            {headerText.watch}
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
           <Link color="foreground" href="/privacy">
             {headerText.privacy_policy}
           </Link>
