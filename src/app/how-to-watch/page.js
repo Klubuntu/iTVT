@@ -61,8 +61,6 @@ const Page = () => {
                             <li>- IPTV - Alexander Sofronov <Link href="https://play.google.com/store/apps/details?id=ru.iptvremote.android.iptv" className='text-gray-500'>(Download here)</Link></li>
                         </ul>
                     </div>
-                </div>
-
             </div>
         </HeroUIProvider>
     );
