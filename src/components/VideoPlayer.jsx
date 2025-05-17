@@ -23,7 +23,7 @@ import {
 } from "media-chrome/react";
 import Image from "next/image";
 
-const VideoPlayer = () => {
+const VideoPlayer = ({src}) => {
   const [isMediaVisible, setIsMediaVisible] = useState(false);
 
   useEffect(() => {
@@ -51,7 +51,7 @@ const VideoPlayer = () => {
 
     // Call the function and update the state
     checkPageStatus(
-      "https://video-itv.itvt.xyz/live/itvt/index.m3u8",
+      src,
       (status, err) => {
         if (err) {
           console.error(err);
@@ -72,7 +72,7 @@ const VideoPlayer = () => {
         <>
           <MediaController id="mc" className="w-full h-full">
             <hls-video
-              src="https://video-itv.itvt.xyz/live/itvt/index.m3u8"
+              src={src}
               slot="media"
               crossOrigin={true}
               StreamType="live"
