@@ -21,7 +21,7 @@ const AccordionItem = ({ index, title, description, active, handleToggle }) => {
         aria-labelledby={`accordion-${index + 1}`}
         aria-hidden={active !== index}
       >
-        <p>{description}</p>
+        <p>{description?.trim() ? description : 'brak opisu'}</p>
       </div>
     </div>
   );
@@ -40,7 +40,7 @@ const AccordionBox = ({programs}) => {
         <AccordionItem
           key={index}
           index={index}
-          title={program.title}
+          title={`${program.startTime} - ${program.endTime} | ${program.title}`}
           description={program.description}
           active={active}
           handleToggle={handleToggle}

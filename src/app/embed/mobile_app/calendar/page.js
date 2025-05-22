@@ -4,13 +4,15 @@ import "@/styles/hideMenu.css";
 import React, {useRef, useState, useEffect} from "react";
 import { HeroUIProvider } from "@heroui/react";
 import AccordionBox from '@/components/AccordionBox';
-import Programs from '@/components/client/Programs';
+import {usePrograms} from '@/components/client/Programs';
 
 import { useLangData } from '@/components/client/useLangData';
 
 const App = () => {
     const appRef = useRef();
     const lang = useLangData();
+    const { programsToday, programsTomorrow, programsFuture } = usePrograms();
+
     const [calendarText, setCalendarText] = useState('');
     const [todayDate, setTodayDate] = useState('');
 
@@ -36,12 +38,13 @@ const App = () => {
     return (
         <HeroUIProvider>
             <div className="App stop-drag" ref={appRef}>
-                <h2 className="text-center font-bold text-3xl mt-2">{calendarText.demo_broadcast}</h2>
-                <AccordionBox programs={Programs.programsDemoBroadcast}/>
                 <h2 className="text-center font-bold text-3xl mt-5">{calendarText.today + ` (${todayDate})`}</h2>
-                <AccordionBox programs={Programs.programsToday}/>
+                <AccordionBox programs={programsToday}/>
                 <h2 className="text-center font-bold text-3xl mt-5">{calendarText.tomorrow}</h2>
-                <AccordionBox programs={Programs.programsTomorrow}/>
+                <AccordionBox programs={programsTomorrow}/>
+                <h2 className="text-center font-bold text-3xl mt-5">{calendarText.future}</h2>
+                <AccordionBox programs={programsFuture} />
+
             </div>
         </HeroUIProvider>
     );
