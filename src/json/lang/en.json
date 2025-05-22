@@ -17,6 +17,7 @@
     "tv_calendar": {
       "today": "Today",
       "tomorrow": "Tomorrow",
+      "future": "Soon",
       "demo_broadcast": "Demo Broadcast"
     },
     "watch": {

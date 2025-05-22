@@ -17,6 +17,7 @@
     "tv_calendar": {
       "today": "Dzisiaj",
       "tomorrow": "Jutro",
+      "future": "Wkrótce",
       "demo_broadcast": "Transmisja testowa"
     },
     "watch":{
