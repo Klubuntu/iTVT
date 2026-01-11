@@ -20,7 +20,7 @@
     "hls.js": "^1.5.19",
     "js-cookie": "^3.0.5",
     "media-chrome": "^4.3.0",
-    "next": "15.3.2",
+    "next": "15.3.8",
     "next-client-cookies": "^2.1.0",
     "next13-progressbar": "^1.2.2",
     "react": "19.1.0",
