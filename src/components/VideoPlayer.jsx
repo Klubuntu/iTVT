@@ -23,11 +23,14 @@ import {
 } from "media-chrome/react";
 import Image from "next/image";
 
+const MAX_RECONNECT_ATTEMPTS = 10;
+
 const VideoPlayer = ({src}) => {
   const [isMediaVisible, setIsMediaVisible] = useState(false);
   const [isOnline, setIsOnline] = useState(true);
   const [reconnectAttempts, setReconnectAttempts] = useState(0);
   const [isStreamFailed, setIsStreamFailed] = useState(false);
+  const [showErrorPopup, setShowErrorPopup] = useState(false);
   const videoRef = useRef(null);
   const reconnectTimeoutRef = useRef(null);
   const lastErrorTimeRef = useRef(null);
@@ -115,8 +118,16 @@ const VideoPlayer = ({src}) => {
         }
         lastErrorTimeRef.current = now;
         
+        // Check if max attempts reached
+        if (reconnectAttempts >= MAX_RECONNECT_ATTEMPTS) {
+          console.warn('Max reconnection attempts reached');
+          setIsStreamFailed(false);
+          setShowErrorPopup(true);
+          return;
+        }
+        
         const delay = Math.min(1000 * Math.pow(2, reconnectAttempts), 30000); // Exponential backoff, max 30s
-        console.log(`Attempting reconnect in ${delay}ms (attempt ${reconnectAttempts + 1})`);
+        console.log(`Attempting reconnect in ${delay}ms (attempt ${reconnectAttempts + 1}/${MAX_RECONNECT_ATTEMPTS})`);
         
         reconnectTimeoutRef.current = setTimeout(() => {
           setReconnectAttempts(prev => prev + 1);
@@ -128,6 +139,13 @@ const VideoPlayer = ({src}) => {
     const handleStalled = () => {
       console.warn('Stream stalled, checking connection...');
       if (isOnline) {
+        // Check if max attempts reached
+        if (reconnectAttempts >= MAX_RECONNECT_ATTEMPTS) {
+          console.warn('Max reconnection attempts reached');
+          setShowErrorPopup(true);
+          return;
+        }
+        
         const delay = Math.min(1000 * Math.pow(2, reconnectAttempts), 30000);
         reconnectTimeoutRef.current = setTimeout(() => {
           setReconnectAttempts(prev => prev + 1);
@@ -175,13 +193,34 @@ const VideoPlayer = ({src}) => {
 
   const handleManualReconnect = () => {
     setIsStreamFailed(false);
+    setShowErrorPopup(false);
     setReconnectAttempts(0);
     attemptReconnect();
   };
 
+  const handleCloseErrorPopup = () => {
+    setShowErrorPopup(false);
+    // Reset to initial state when closing error popup
+    setReconnectAttempts(0);
+  };
+
   return (
      <div id="videoplayer" className="w-full aspect-video rounded-lg overflow-hidden shadow-xl max-w-5xl bg-black">
-      {isMediaVisible ? (
+      {showErrorPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-90 flex justify-center items-center z-50">
+          <div className="bg-black p-8 rounded shadow-lg text-center border border-red-600">
+            <h2 className="text-2xl font-bold mb-4 text-red-500">Problem connecting to player</h2>
+            <p className="mb-6 text-gray-300">Try again later</p>
+            <button 
+              onClick={handleCloseErrorPopup} 
+              className="px-6 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+      {isMediaVisible && !showErrorPopup ? (
         <>
           <MediaController id="mc" className="w-full h-full">
             <hls-video
