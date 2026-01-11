@@ -113,21 +113,20 @@ const VideoPlayer = ({src}) => {
       if (isOnline) {
         const now = Date.now();
         // Throttle error handling to avoid spamming
-        if (lastErrorTimeRef.current && now - lastErrorTimeRef.current < 1000) {
+        if (lastErrorTimeRef.current && now - lastErrorTimeRef.current < 2000) {
           return;
         }
         lastErrorTimeRef.current = now;
         
         // Check if max attempts reached
         if (reconnectAttempts >= MAX_RECONNECT_ATTEMPTS) {
-          console.warn('Max reconnection attempts reached');
-          setIsStreamFailed(false);
+          console.warn('Max reconnection attempts reached after error');
           setShowErrorPopup(true);
           return;
         }
         
-        const delay = Math.min(1000 * Math.pow(2, reconnectAttempts), 30000); // Exponential backoff, max 30s
-        console.log(`Attempting reconnect in ${delay}ms (attempt ${reconnectAttempts + 1}/${MAX_RECONNECT_ATTEMPTS})`);
+        const delay = Math.min(1000 * Math.pow(2, reconnectAttempts), 30000);
+        console.log(`Error detected, attempting reconnect in ${delay}ms (attempt ${reconnectAttempts + 1}/${MAX_RECONNECT_ATTEMPTS})`);
         
         reconnectTimeoutRef.current = setTimeout(() => {
           setReconnectAttempts(prev => prev + 1);
@@ -168,8 +167,7 @@ const VideoPlayer = ({src}) => {
     if (!videoElement) return;
 
     try {
-      console.log('Reloading stream...');
-      // Force reload by setting src again
+      console.log(`Reloading stream... (attempt ${reconnectAttempts + 1}/${MAX_RECONNECT_ATTEMPTS})`);
       const currentSrc = videoElement.getAttribute('src');
       videoElement.setAttribute('src', '');
       
@@ -177,17 +175,44 @@ const VideoPlayer = ({src}) => {
       setTimeout(() => {
         videoElement.setAttribute('src', currentSrc);
         videoElement.load();
-        // Give stream 10 seconds to load before showing manual play button
-        setTimeout(() => {
-          if (videoElement.paused || videoElement.error) {
-            console.warn('Stream failed to load after 10 seconds');
-            setIsStreamFailed(true);
+        
+        // Check if video loaded successfully within 8 seconds
+        const loadTimeout = setTimeout(() => {
+          const hasError = videoElement.error || videoElement.networkState === 3; // 3 = NETWORK_NO_SOURCE
+          
+          if (hasError || videoElement.readyState < 2) { // readyState < 2 means not enough data
+            console.warn(`Stream failed to load after 8 seconds (readyState: ${videoElement.readyState}, error: ${videoElement.error})`);
+            
+            // Check if we've reached max attempts
+            if (reconnectAttempts + 1 >= MAX_RECONNECT_ATTEMPTS) {
+              console.error('Max reconnection attempts reached');
+              setShowErrorPopup(true);
+            } else {
+              // Try again with exponential backoff
+              const delay = Math.min(1000 * Math.pow(2, reconnectAttempts + 1), 30000);
+              console.log(`Will retry in ${delay}ms...`);
+              reconnectTimeoutRef.current = setTimeout(() => {
+                setReconnectAttempts(prev => prev + 1);
+              }, delay);
+            }
+          } else {
+            console.log('Stream loaded successfully, clearing timeout');
+            setReconnectAttempts(0); // Reset on success
           }
-        }, 10000);
+          clearTimeout(loadTimeout);
+        }, 8000);
       }, 100);
     } catch (error) {
       console.error('Reconnect failed:', error);
-      setIsStreamFailed(true);
+      
+      if (reconnectAttempts >= MAX_RECONNECT_ATTEMPTS) {
+        setShowErrorPopup(true);
+      } else {
+        const delay = Math.min(1000 * Math.pow(2, reconnectAttempts), 30000);
+        reconnectTimeoutRef.current = setTimeout(() => {
+          setReconnectAttempts(prev => prev + 1);
+        }, delay);
+      }
     }
   };
 
