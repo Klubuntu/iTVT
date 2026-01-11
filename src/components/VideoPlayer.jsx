@@ -25,6 +25,10 @@ import Image from "next/image";
 
 const VideoPlayer = ({src}) => {
   const [isMediaVisible, setIsMediaVisible] = useState(false);
+  const [isOnline, setIsOnline] = useState(true);
+  const [reconnectAttempts, setReconnectAttempts] = useState(0);
+  const videoRef = useRef(null);
+  const reconnectTimeoutRef = useRef(null);
 
   useEffect(() => {
     function checkPageStatus(url, callback) {
@@ -66,12 +70,94 @@ const VideoPlayer = ({src}) => {
     );
   }, []);
 
+  // Auto-reconnect logic
+  useEffect(() => {
+    const handleOnline = () => {
+      console.log('Connection restored, attempting to reconnect...');
+      setIsOnline(true);
+      setReconnectAttempts(0);
+      attemptReconnect();
+    };
+
+    const handleOffline = () => {
+      console.log('Connection lost');
+      setIsOnline(false);
+    };
+
+    // Add online/offline listeners
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+      if (reconnectTimeoutRef.current) {
+        clearTimeout(reconnectTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  // Monitor HLS video errors
+  useEffect(() => {
+    const videoElement = videoRef.current;
+    if (!videoElement) return;
+
+    const handleError = (e) => {
+      console.error('Video error occurred:', e);
+      if (isOnline && reconnectAttempts < 5) {
+        const delay = Math.min(1000 * Math.pow(2, reconnectAttempts), 30000); // Exponential backoff, max 30s
+        console.log(`Attempting reconnect in ${delay}ms (attempt ${reconnectAttempts + 1})`);
+        
+        reconnectTimeoutRef.current = setTimeout(() => {
+          setReconnectAttempts(prev => prev + 1);
+          attemptReconnect();
+        }, delay);
+      }
+    };
+
+    const handleStalled = () => {
+      console.warn('Stream stalled, checking connection...');
+      if (isOnline && reconnectAttempts < 5) {
+        attemptReconnect();
+      }
+    };
+
+    videoElement.addEventListener('error', handleError);
+    videoElement.addEventListener('stalled', handleStalled);
+
+    return () => {
+      videoElement.removeEventListener('error', handleError);
+      videoElement.removeEventListener('stalled', handleStalled);
+    };
+  }, [isOnline, reconnectAttempts]);
+
+  const attemptReconnect = () => {
+    const videoElement = videoRef.current;
+    if (!videoElement) return;
+
+    try {
+      console.log('Reloading stream...');
+      // Force reload by setting src again
+      const currentSrc = videoElement.getAttribute('src');
+      videoElement.setAttribute('src', '');
+      
+      // Small delay to ensure cleanup
+      setTimeout(() => {
+        videoElement.setAttribute('src', currentSrc);
+        videoElement.load();
+      }, 100);
+    } catch (error) {
+      console.error('Reconnect failed:', error);
+    }
+  };
+
   return (
      <div id="videoplayer" className="w-full aspect-video rounded-lg overflow-hidden shadow-xl max-w-5xl bg-black">
       {isMediaVisible ? (
         <>
           <MediaController id="mc" className="w-full h-full">
             <hls-video
+              ref={videoRef}
               src={src}
               slot="media"
               crossOrigin={true}
