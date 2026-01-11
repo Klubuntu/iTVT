@@ -230,7 +230,7 @@ const VideoPlayer = ({src}) => {
   };
 
   return (
-     <div id="videoplayer" className="w-full aspect-video rounded-lg overflow-hidden shadow-xl max-w-5xl bg-black">
+     <div id="videoplayer" className="w-full aspect-video rounded-xl overflow-hidden shadow-xl max-w-7xl bg-black border border-zinc-700/40">
       {showErrorPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-90 flex justify-center items-center z-50">
           <div className="bg-black p-8 rounded shadow-lg text-center border border-red-600">
