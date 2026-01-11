@@ -27,8 +27,10 @@ const VideoPlayer = ({src}) => {
   const [isMediaVisible, setIsMediaVisible] = useState(false);
   const [isOnline, setIsOnline] = useState(true);
   const [reconnectAttempts, setReconnectAttempts] = useState(0);
+  const [isStreamFailed, setIsStreamFailed] = useState(false);
   const videoRef = useRef(null);
   const reconnectTimeoutRef = useRef(null);
+  const lastErrorTimeRef = useRef(null);
 
   useEffect(() => {
     function checkPageStatus(url, callback) {
@@ -76,6 +78,7 @@ const VideoPlayer = ({src}) => {
       console.log('Connection restored, attempting to reconnect...');
       setIsOnline(true);
       setReconnectAttempts(0);
+      setIsStreamFailed(false);
       attemptReconnect();
     };
 
@@ -104,7 +107,14 @@ const VideoPlayer = ({src}) => {
 
     const handleError = (e) => {
       console.error('Video error occurred:', e);
-      if (isOnline && reconnectAttempts < 5) {
+      if (isOnline) {
+        const now = Date.now();
+        // Throttle error handling to avoid spamming
+        if (lastErrorTimeRef.current && now - lastErrorTimeRef.current < 1000) {
+          return;
+        }
+        lastErrorTimeRef.current = now;
+        
         const delay = Math.min(1000 * Math.pow(2, reconnectAttempts), 30000); // Exponential backoff, max 30s
         console.log(`Attempting reconnect in ${delay}ms (attempt ${reconnectAttempts + 1})`);
         
@@ -117,8 +127,12 @@ const VideoPlayer = ({src}) => {
 
     const handleStalled = () => {
       console.warn('Stream stalled, checking connection...');
-      if (isOnline && reconnectAttempts < 5) {
-        attemptReconnect();
+      if (isOnline) {
+        const delay = Math.min(1000 * Math.pow(2, reconnectAttempts), 30000);
+        reconnectTimeoutRef.current = setTimeout(() => {
+          setReconnectAttempts(prev => prev + 1);
+          attemptReconnect();
+        }, delay);
       }
     };
 
@@ -145,10 +159,24 @@ const VideoPlayer = ({src}) => {
       setTimeout(() => {
         videoElement.setAttribute('src', currentSrc);
         videoElement.load();
+        // Give stream 10 seconds to load before showing manual play button
+        setTimeout(() => {
+          if (videoElement.paused || videoElement.error) {
+            console.warn('Stream failed to load after 10 seconds');
+            setIsStreamFailed(true);
+          }
+        }, 10000);
       }, 100);
     } catch (error) {
       console.error('Reconnect failed:', error);
+      setIsStreamFailed(true);
     }
+  };
+
+  const handleManualReconnect = () => {
+    setIsStreamFailed(false);
+    setReconnectAttempts(0);
+    attemptReconnect();
   };
 
   return (
