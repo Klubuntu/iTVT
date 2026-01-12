@@ -47,7 +47,7 @@ const Page = () => {
                 <NavbarWrapper headerText={headerText}/>
                 <div className="text-center max-w-[1000px] mx-5 sm:mx-4 max-mobile:mb-28 lg:mx-auto">
                     <h2 className="font-bold text-2xl text-center my-7">{privacyText.about_us.title}</h2>
-                    <p>{privacyText.about_us.content}: <a href="https://hub.itvt.xyz/watch">https://hub.itvt.xyz/watch</a></p>
+                    <p>{privacyText.about_us.content}: <a href="https://files.itvt.xyz/download/android/">https://files.itvt.xyz/download/android/</a></p>
                     <h2 className="font-bold text-2xl text-center my-7">{privacyText.media.title}</h2>
                     <p>{privacyText.media.content}</p>
                     <h2 className="font-bold text-2xl text-center my-7">{privacyText.cookies.title}</h2>
