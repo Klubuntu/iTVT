@@ -1,0 +1,35 @@
+{
+  "pages": {
+    "404": "The selected page does not exist. Select an available option from the Menu when you return to the start page",
+    "return_page": "Click here to return to the initial page",
+    "channel": "Select Favourite Channel",
+    "player": {
+      "watch_broadcast": "Watch Broadcast",
+      "unavailable": "Unavailable"
+    },
+    "tv_calendar": {
+      "today": "Today",
+      "tomorrow": "Tomorrow",
+      "future": "Soon",
+      "demo_broadcast": "Demo Broadcast"
+    },
+    "watch": {
+      "how_to_watch": "How to watch ?",
+      "mobile_app": "Mobile App",
+      "playlist_m3u": "Playlist m3u",
+      "mobile": {
+        "try_app": "Try the app (Only for Android)",
+        "download": "Download now",
+        "soon": "Soon (available on Google Play)",
+        "vod_info": "VOD available"
+      },
+      "playlist": {
+        "use_link": "Use link",
+        "also_download": "also download file below",
+        "download": "Download",
+        "apps_recommended": "Recommended Apps to watch for you",
+        "other_devices": "Other devices"
+      }
+    }
+  }
+}

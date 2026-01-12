@@ -10,15 +10,15 @@ import { fetchHeaderText } from '@/app/actions/fetchHeaderText';
 
 const Page = () => {
     const appRef = useRef();
-    const lang = useLangData();
+    const childProtectionData = useLangData('child_protection');
     const [childPolicyText, setChildPolicyText] = useState('');
     const [headerText, setHeaderText] = useState(null);
 
     useEffect(() => {
         
-        if (!lang) return;
-        if (lang && lang.pages?.child_protection_policy) {
-            setChildPolicyText(lang.pages.child_protection_policy);
+        if (!childProtectionData) return;
+        if (childProtectionData && childProtectionData.child_protection_policy) {
+            setChildPolicyText(childProtectionData.child_protection_policy);
         }
 
         const loadHeaderText = async () => {
@@ -27,7 +27,7 @@ const Page = () => {
         };
 
         loadHeaderText();
-    }, [lang]);
+    }, [childProtectionData]);
     
     useEffect(() => {
         if (appRef.current) {

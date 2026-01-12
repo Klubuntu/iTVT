@@ -16,14 +16,14 @@ async function getContactText(){
 
 const Page = () => {
     const appRef = useRef();
-    const lang = useLangData();
+    const contactData = useLangData('contact');
     const [contactText, setContactText] = useState('');
     const [headerText, setHeaderText] = useState(null);
 
     useEffect(() => {
-        if (!lang) return;
-        if (lang && lang.pages?.contact) {
-            setContactText(lang.pages.contact);
+        if (!contactData) return;
+        if (contactData) {
+            setContactText(contactData);
         }
 
         const loadHeaderText = async () => {
@@ -32,7 +32,7 @@ const Page = () => {
         };
 
         loadHeaderText();
-    }, [lang]);
+    }, [contactData]);
     
     useEffect(() => {
         if (appRef.current) {

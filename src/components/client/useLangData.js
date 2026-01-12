@@ -2,7 +2,7 @@
 
 import { useCookies } from 'next-client-cookies';
 
-export const useLangData = () => {
+export const useLangData = (fileName = 'main') => {
   const cookies = useCookies();
   let lang;
 
@@ -16,7 +16,7 @@ export const useLangData = () => {
   }
 
   try {
-    const lang_block = require(`@/json/lang/${lang}.json`);
+    const lang_block = require(`@/json/lang/${lang}/${fileName}.json`);
     return lang_block;
   } catch (err) {
     console.error(err);

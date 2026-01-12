@@ -3,7 +3,7 @@
 import { getCookies } from 'next-client-cookies/server';
 import { notFound } from 'next/navigation';
 
-const getLangData = () => {
+const getLangData = (fileName = 'main') => {
     try {
         const cookies = getCookies();
         const langCookie = cookies?.get ? cookies.get("hub_lang") : null;
@@ -15,7 +15,7 @@ const getLangData = () => {
                 break;
         }
 
-        const lang_block = require(`@/json/lang/${lang}.json`);
+        const lang_block = require(`@/json/lang/${lang}/${fileName}.json`);
         return lang_block;
     } catch (err) {
         console.error("Error loading language file:", err);

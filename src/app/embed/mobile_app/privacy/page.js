@@ -8,17 +8,17 @@ import { useLangData } from '@/components/client/useLangData';
 
 const Page = () => {
     const appRef = useRef();
-    const lang = useLangData();
+    const privacyData = useLangData('privacy');
     const [privacyText, setPrivacyText] = useState('');
 
     useEffect(() => {
-        if (!lang) return;
-        if (lang && lang.pages?.privacy_policy) {
+        if (!privacyData) return;
+        if (privacyData) {
             setTimeout(() => {
-                setPrivacyText(lang.pages.privacy_policy);
+                setPrivacyText(privacyData);
             }, 600);
         }
-    }, [lang]);
+    }, [privacyData]);
 
     if (!privacyText) {
         return <div>Loading...</div>;

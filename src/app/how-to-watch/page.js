@@ -12,7 +12,7 @@ import { fetchHeaderText } from '@/app/actions/fetchHeaderText';
 
 const Page = () => {
     const appRef = useRef();
-    const lang = useLangData();
+    const lang = useLangData('pages');
     const [headerText, setHeaderText] = useState(null);
     const [infoText, setInfoText] = useState(null);
 

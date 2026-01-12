@@ -11,7 +11,7 @@ import Channels from '@/components/Channels';
 
 const Page = () => {
   const appRef = useRef();
-  const lang = useLangData();
+  const lang = useLangData('pages');
   const channelsText = lang.pages?.channel;
   const [headerText, setHeaderText] = useState(null);
 

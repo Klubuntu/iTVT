@@ -8,7 +8,7 @@ import Channels from '@/components/Channels';
 import { useLangData } from '@/components/client/useLangData';
 const Page = () => {
   const appRef = useRef();
-  const lang = useLangData();
+  const lang = useLangData('pages');
   const channelsText = lang.pages?.channel;
 
   useEffect(() => {

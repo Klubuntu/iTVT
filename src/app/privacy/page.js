@@ -11,14 +11,14 @@ import { fetchHeaderText } from '@/app/actions/fetchHeaderText';
 
 const Page = () => {
     const appRef = useRef();
-    const lang = useLangData();
+    const privacyData = useLangData('privacy');
     const [privacyText, setPrivacyText] = useState('');
     const [headerText, setHeaderText] = useState(null);
 
     useEffect(() => {
-        if (!lang) return;
-        if (lang && lang.pages?.privacy_policy) {
-            setPrivacyText(lang.pages.privacy_policy);
+        if (!privacyData) return;
+        if (privacyData) {
+            setPrivacyText(privacyData);
         }
 
         const loadHeaderText = async () => {
@@ -27,7 +27,7 @@ const Page = () => {
         };
 
         loadHeaderText();
-    }, [lang]);
+    }, [privacyData]);
     
     useEffect(() => {
         if (appRef.current) {

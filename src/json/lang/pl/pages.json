@@ -1,0 +1,35 @@
+{
+  "pages": {
+    "404": "Wybrana strona nie istnieje. Wybierz dostępną opcję z Menu po powrocie do strony początkowej",
+    "return_page": "Kliknij tutaj, aby powrócić do strony początkowej",
+    "channel": "Wybierz ulubiony kanał",
+    "player": {
+      "watch_broadcast": "Oglądaj transmisje",
+      "unavailable": "Niedostępne"
+    },
+    "tv_calendar": {
+      "today": "Dzisiaj",
+      "tomorrow": "Jutro",
+      "future": "Wkrótce",
+      "demo_broadcast": "Transmisja testowa"
+    },
+    "watch": {
+      "how_to_watch": "W jaki sposób możesz oglądać ?",
+      "mobile_app": "Aplikacja Mobilna",
+      "playlist_m3u": "Playlista m3u",
+      "mobile": {
+        "try_app": "Wypróbuj aplikację (tylko na Androida)",
+        "download": "Pobierz teraz",
+        "soon": "Wkrótce (dostępne w Google Play)",
+        "vod_info": "VOD jest dostępne"
+      },
+      "playlist": {
+        "use_link": "Użyj linku",
+        "also_download": "lub pobierz plik poniżej",
+        "download": "Pobierz",
+        "apps_recommended": "Polecane apki do oglądania dla ciebie",
+        "other_devices": "Pozostałe urządzenia"
+      }
+    }
+  }
+}

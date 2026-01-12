@@ -10,7 +10,7 @@ import { usePrograms } from "@/components/client/Programs";
 
 const Page = () => {
   const appRef = useRef(null);
-  const lang = useLangData();
+  const lang = useLangData('pages');
   const { programsToday, programsTomorrow, programsFuture } = usePrograms();
 
   const [calendarText, setCalendarText] = useState(null);

@@ -1,11 +1,6 @@
 {
-  "title": [
-    "Skontaktuj się"
-  ],
-  "editors": [
-    "Redakcja"
-  ],
-  "ads": [
-    "Reklamy"
-  ]
+  "contact_us": "Skontaktuj się",
+  "editors": "Redakcja",
+  "ads": "Reklamy",
+  "children_safety": "Bezpieczeństwo dzieci"
 }

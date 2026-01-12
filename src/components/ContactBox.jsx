@@ -9,7 +9,7 @@ export default function ({ team, email, text_email }) {
       </div>
       <Divider className="my-4" />
       <div className="flex h-5 items-center space-x-4 text-small">
-          Email:{" "}
+          Email:&nbsp;
           {email ? (
             <Link href={"mailto:" + email}>{email}</Link>
           ) : (

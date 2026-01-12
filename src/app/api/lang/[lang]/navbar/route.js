@@ -9,7 +9,7 @@ export async function GET(req, props) {
     const params = await props.params;
     const paramLang = params.lang;
     const packageDir = process.cwd();
-    const jsonLang = `${packageDir}/src/json/lang/${paramLang}/main.json`;
+    const jsonLang = `${packageDir}/src/json/lang/${paramLang}/navbar.json`;
 
     if (fs.existsSync(jsonLang)) {
         try {

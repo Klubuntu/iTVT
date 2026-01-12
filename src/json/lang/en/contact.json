@@ -1,11 +1,6 @@
 {
-  "title": [
-    "Contact Us"
-  ],
-  "editors": [
-    "Editorial Office"
-  ],
-  "ads": [
-    "Ads"
-  ]
+  "contact_us": "Contact us",
+  "editors": "Editorial office",
+  "ads": "Ads",
+  "children_safety": "Children's Safety"
 }

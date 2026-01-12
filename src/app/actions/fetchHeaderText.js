@@ -11,7 +11,7 @@ export const fetchHeaderText = async () => {
   const lang = getCookie('hub_lang') || 'en';
 
   // Fetch the header text based on the lang
-  const response = await fetch(`/api/lang/${lang}`);
+  const response = await fetch(`/api/lang/${lang}/navbar`);
   const data = await response.json();
   return data.navbar; // Assuming the JSON has a 'navbar' key
 };

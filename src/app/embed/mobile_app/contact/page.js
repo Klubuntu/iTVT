@@ -9,17 +9,17 @@ import { useLangData } from '@/components/client/useLangData';
 
 const App = () => {
     const appRef = useRef();
-    const lang = useLangData();
+    const contactData = useLangData('contact');
     const [contactText, setContactText] = useState('');
 
     useEffect(() => {
-        if (!lang) return;
-        if (lang && lang.pages?.contact) {
+        if (!contactData) return;
+        if (contactData) {
             setTimeout(() => {
-                setContactText(lang.pages.contact);
+                setContactText(contactData);
             }, 600);  
         }
-    }, [lang]);
+    }, [contactData]);
 
     if (!contactText) {
         return <div>Loading...</div>;

@@ -1,0 +1,77 @@
+{
+  "child_protection_policy": {
+    "title": "Polityka Ochrony Dzieci i Zapobiegania Nadużyciom – [iTVT App]",
+    "sections": {
+      "purpose_scope": {
+        "title": "1. Cel i Zakres",
+        "content": "Celem niniejszej polityki jest zapewnienie bezpieczeństwa dzieci korzystających z naszej aplikacji oraz zapobieganie wykorzystywaniu seksualnemu i innym naruszeniom ich praw. Dokument ten dotyczy wszystkich użytkowników, pracowników, moderatorów oraz dostawców usług współpracujących z naszą aplikacją, zgodnie z Polityką Google Play dotyczącą rodzin i dzieci (https://support.google.com/googleplay/android-developer/answer/9893335)."
+      },
+      "responsibilities": {
+        "title": "2. Odpowiedzialność",
+        "content": [
+          "Zapewnienie, że treści i funkcje aplikacji są odpowiednie dla dzieci (jeśli aplikacja jest kierowana do dzieci lub dostępna dla nich).",
+          "Przestrzeganie obowiązujących przepisów dotyczących ochrony dzieci i prywatności (np. RODO, COPPA).",
+          "Wdrożenie skutecznych mechanizmów moderacji treści i zgłaszania nadużyć."
+        ]
+      },
+      "prohibited": {
+        "title": "3. Zabronione treści i działania",
+        "content": [
+          "Treści seksualizujące lub w inny sposób niestosowne względem osób nieletnich.",
+          "Treści zawierające przemoc, poniżające lub promujące wykorzystywanie dzieci.",
+          "Zbieranie danych osobowych dzieci bez zgody rodzica/prawnego opiekuna (jeśli dotyczy).",
+          "Zachęcanie dzieci do kontaktów z nieznajomymi poza aplikacją."
+        ]
+      },
+      "reporting": {
+        "title": "4. Zgłaszanie i reakcja na nadużycia",
+        "content": [
+          "Wszyscy użytkownicy mogą zgłaszać:",
+          "- Nieodpowiednie treści,",
+          "- Nadużycia,",
+          "- Podejrzane konta lub zachowania.",
+          "Zgłoszenia są analizowane w ciągu 24 godzin przez nasz zespół ds. bezpieczeństwa. W przypadku potwierdzenia naruszenia:",
+          "- Treść zostaje usunięta,",
+          "- Konto użytkownika może zostać zawieszone lub zablokowane,",
+          "- Sprawa może zostać zgłoszona odpowiednim służbom."
+        ]
+      },
+      "moderation": {
+        "title": "5. Kontrola treści i moderacja",
+        "content": [
+          "Treści generowane przez użytkowników (UGC) podlegają automatycznej i ręcznej moderacji.",
+          "Dzieciom nie wolno publicznie udostępniać danych osobowych (np. pełnych imion i nazwisk, zdjęć twarzy, numerów kontaktowych)."
+        ]
+      },
+      "training": {
+        "title": "6. Edukacja i szkolenia",
+        "content": [
+          "Wszyscy członkowie zespołu (w tym moderatorzy i twórcy treści) są regularnie szkoleni w zakresie:",
+          "- Bezpieczeństwa dzieci w środowisku cyfrowym,",
+          "- Rozpoznawania i reagowania na zagrożenia,",
+          "- Standardów zgodnych z Polityką Google Play dotyczącą rodzin."
+        ]
+      },
+      "data_protection": {
+        "title": "7. Przechowywanie i ochrona danych dzieci",
+        "content": [
+          "Dane dzieci, jeśli są zbierane, są minimalizowane i przechowywane zgodnie z najlepszymi praktykami w zakresie prywatności.",
+          "Nie udostępniamy danych dzieci stronom trzecim bez wyraźnej zgody rodzica lub opiekuna prawnego."
+        ]
+      },
+      "review": {
+        "title": "8. Przegląd i aktualizacja polityki",
+        "content": "Polityka jest przeglądana co najmniej raz na 12 miesięcy i aktualizowana w razie potrzeby, aby odzwierciedlać zmiany w przepisach lub wymaganiach Google Play."
+      },
+      "contact": {
+        "title": "9. Kontakt",
+        "content": [
+          "W sprawach związanych z bezpieczeństwem dzieci prosimy o kontakt pod adresem e-mail: safety@itvt.xyz",
+          "Nie udostępniamy danych dzieci stronom trzecim bez wyraźnej zgody rodziców/opiekunów prawnych.",
+          "Dokument wchodzi w życie dnia: 10 maja 2025 r.",
+          "iTVT | OnerOS Tech"
+        ]
+      }
+    }
+  }
+}
