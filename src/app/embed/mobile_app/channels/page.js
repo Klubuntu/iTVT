@@ -6,6 +6,7 @@ import {HeroUIProvider} from "@heroui/react";
 import Channels from '@/components/Channels';
 
 import { useLangData } from '@/components/client/useLangData';
+import LoadingBar from '@/components/LoadingBar';
 const Page = () => {
   const appRef = useRef();
   const lang = useLangData('pages');
@@ -16,7 +17,7 @@ const Page = () => {
   }, [lang]);
 
   if (!lang) {
-    return <div>Loading...</div>;
+    return <LoadingBar />;
   }
 
   return (

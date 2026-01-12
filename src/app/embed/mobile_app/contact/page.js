@@ -6,6 +6,7 @@ import { HeroUIProvider } from "@heroui/react";
 import ContactBox from "@/components/ContactBox";
 
 import { useLangData } from '@/components/client/useLangData';
+import LoadingBar from '@/components/LoadingBar';
 
 const App = () => {
     const appRef = useRef();
@@ -22,7 +23,7 @@ const App = () => {
     }, [contactData]);
 
     if (!contactText) {
-        return <div>Loading...</div>;
+        return <LoadingBar />;
     }
 
     return (

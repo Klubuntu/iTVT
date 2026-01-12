@@ -7,6 +7,7 @@ import AccordionBox from '@/components/AccordionBox';
 import {usePrograms} from '@/components/client/Programs';
 
 import { useLangData } from '@/components/client/useLangData';
+import LoadingBar from '@/components/LoadingBar';
 
 const App = () => {
     const appRef = useRef();

@@ -8,6 +8,7 @@ import NavbarWrapper from '@/components/NavBar/wrapper';
 
 import { useLangData } from '@/components/client/useLangData';
 import { fetchHeaderText } from '@/app/actions/fetchHeaderText';
+import LoadingBar from '@/components/LoadingBar';
 
 
 const Page = () => {
@@ -37,7 +38,7 @@ const Page = () => {
     }, [headerText]);
 
     if (!headerText || !infoText) {
-        return <div>Loading...</div>;
+        return <LoadingBar />;
     }
 
     return (

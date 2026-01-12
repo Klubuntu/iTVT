@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { HeroUIProvider } from '@heroui/react';
 
 import { useLangData } from '@/components/client/useLangData';
+import LoadingBar from '@/components/LoadingBar';
 import { fetchHeaderText } from '@/app/actions/fetchHeaderText';
 import FirstLoadPopup from '@/components/FirstLoadPopup';
 import NavbarWrapper from '@/components/NavBar/wrapper';
@@ -33,7 +34,7 @@ const Page = () => {
   }, [headerText]);
 
   if (!headerText || !lang) {
-    return <div>Loading...</div>;
+    return <LoadingBar />;
   }
 
   return (

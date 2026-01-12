@@ -8,6 +8,7 @@ import NavbarWrapper from '@/components/NavBar/wrapper';
 
 import { useLangData } from '@/components/client/useLangData';
 import { fetchHeaderText } from '@/app/actions/fetchHeaderText';
+import LoadingBar from '@/components/LoadingBar';
 
 async function getContactText(){
     const lang = await getLangData();
@@ -41,7 +42,7 @@ const Page = () => {
     }, [headerText]);
 
     if (!headerText || !contactText) {
-        return <div>Loading...</div>;
+        return <LoadingBar />;
     }
 
     return (

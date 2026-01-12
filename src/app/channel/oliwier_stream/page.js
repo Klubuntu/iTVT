@@ -8,6 +8,7 @@ import VideoBox from '@/components/VideoBox';
 import ChannelsPlayer from '@/components/ChannelsPlayer';
 
 import { useLangData } from '@/components/client/useLangData';
+import LoadingBar from '@/components/LoadingBar';
 import { fetchHeaderText } from '@/app/actions/fetchHeaderText';
 
 const Page = () => {

@@ -7,6 +7,7 @@ import AccordionBox from "@/components/AccordionBox";
 import { useLangData } from "@/components/client/useLangData";
 import { fetchHeaderText } from "@/app/actions/fetchHeaderText";
 import { usePrograms } from "@/components/client/Programs";
+import LoadingBar from "@/components/LoadingBar";
 
 const Page = () => {
   const appRef = useRef(null);
@@ -43,7 +44,7 @@ const Page = () => {
   }, []);
 
   if (!headerText || !calendarText) {
-    return <div>Loading...</div>;
+    return <LoadingBar />;
   }
 
   return (

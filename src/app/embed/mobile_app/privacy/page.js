@@ -5,6 +5,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { HeroUIProvider } from "@heroui/react";
 
 import { useLangData } from '@/components/client/useLangData';
+import LoadingBar from '@/components/LoadingBar';
 
 const Page = () => {
     const appRef = useRef();
@@ -21,7 +22,7 @@ const Page = () => {
     }, [privacyData]);
 
     if (!privacyText) {
-        return <div>Loading...</div>;
+        return <LoadingBar />;
     }
 
     return (

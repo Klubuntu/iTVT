@@ -9,6 +9,7 @@ import ChannelsPlayer from '@/components/ChannelsPlayer';
 
 import { useLangData } from '@/components/client/useLangData';
 import { fetchHeaderText } from '@/app/actions/fetchHeaderText';
+import LoadingBar from '@/components/LoadingBar';
 
 const Page = () => {
   const appRef = useRef();
@@ -38,7 +39,7 @@ const Page = () => {
   }, [headerText]);
 
   if (!headerText || !playerText) {
-    return <div>Loading...</div>;
+    return <LoadingBar />;
   }
 
   return (
