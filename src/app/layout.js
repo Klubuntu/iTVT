@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script src="https://scripts.itvt.xyz/user/" async></script>
+        <script src="https://scripts.itvt.xyz/hub/" async></script>
       </head>
       <body className={`${inter.className} dark text-foreground bg-black`} suppressHydrationWarning>
         <CookiesProvider>
