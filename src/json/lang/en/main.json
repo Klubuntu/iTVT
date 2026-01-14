@@ -9,7 +9,8 @@
   "pages": {
     "404": "The selected page does not exist. Select an available option from the Menu when you return to the start page",
     "return_page": "Click here to return to the initial page",
-    "channel": "Select Favourite Channel",
+    "channel": "Choose Your Favorite Channel",
+    "other_channels": "Other Channels",
     "player": {
       "watch_broadcast": "Watch Broadcast",
       "unavailable": "Unavailable"

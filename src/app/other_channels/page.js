@@ -13,7 +13,7 @@ import Channel from '@/components/Channel';
 const Page = () => {
   const appRef = useRef();
   const lang = useLangData('pages');
-  const channelsText = lang.pages?.channel;
+  const otherChannelsText = lang.pages?.other_channels;
   const [headerText, setHeaderText] = useState(null);
 
   useEffect(() => {
@@ -42,10 +42,12 @@ const Page = () => {
       <FirstLoadPopup />
       <div className="App no-clickable stop-drag" ref={appRef}>
         <NavbarWrapper headerText={headerText} />
-        <h1 className="font-bold text-2xl text-center my-7">{channelsText}</h1>
+        <h1 className="font-bold text-2xl text-center my-7">{otherChannelsText}</h1>
         <div className="channel-frame flex justify-center relative right-2.5">
             <div id="channels" className="my-4 flex-wrap max-md:flex max-md:items-center max-md:justify-center lg:flex lg:justify-center md:grid md:grid-cols-2">
-                <Channel url="/other_channels" thumbnail="/static/img/itvt_thumbnail.png" description={lang.pages?.other_channels || 'Other Channels'}/>
+                <Channel url="/" thumbnail="/static/img/itvt_thumbnail.png" description="iTVT Watch Broadcast"/>
+                <Channel url="/channel/other/itvt2" thumbnail="/static/img/itvt_thumbnail.png" description="iTVT 2"/>
+                <Channel url="/channel/other/oliwier_stream" thumbnail="/static/img/oliwierstream_thumbnail.png" description="Oliwier Stream"/>
             </div>
         </div>
       </div>

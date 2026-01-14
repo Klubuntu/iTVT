@@ -9,7 +9,8 @@
   "pages": {
     "404": "Wybrana strona nie istnieje. Wybierz dostępną opcję z Menu po powrocie do strony początkowej",
     "return_page": "Kliknij tutaj, aby powrócić do strony początkowej",
-    "channel": "Wybierz ulubiony kanał",
+    "channel": "Wybierz swój ulubiony kanał",
+    "other_channels": "Inne kanały",
     "player": {
       "watch_broadcast": "Oglądaj transmisje",
       "unavailable": "Niedostępne"

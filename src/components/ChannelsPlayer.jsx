@@ -1,13 +1,15 @@
 import React from "react";
-import ChannelPlayer from "./ChannelPlayer";
+import Channel from "./Channel";
+import { useLangData } from '@/components/client/useLangData';
 
 export default function(){
+    const lang = useLangData('pages');
+    const otherChannelsText = lang?.pages?.other_channels || 'Other Channels';
+    
     return (
         <div className="min-w-96 channel-frame flex justify-center relative right-2.5 mt-16">
             <div id="channels" className="my-4 lg:justify-center md:grid md:grid-cols-2">
-                <ChannelPlayer url="/" thumbnail="/static/img/itvt_thumbnail.png" description="iTVT"/>
-                <ChannelPlayer url="/channel/itvt2" thumbnail="/static/img/itvt_thumbnail.png" description="iTVT 2"/>
-                <ChannelPlayer url="/channel/oliwier_stream" thumbnail="/static/img/oliwierstream_thumbnail.png" description="Oliwier Stream"/>
+                <Channel url="/other_channels" thumbnail="/static/img/itvt_thumbnail.png" description={otherChannelsText}/>
             </div>
         </div>
     )
