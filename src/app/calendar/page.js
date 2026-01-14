@@ -51,11 +51,12 @@ const Page = () => {
     <HeroUIProvider>
       <div className="App no-clickable stop-drag" ref={appRef}>
         <NavbarWrapper headerText={headerText} />
-        <h2 className="text-center font-bold text-3xl mt-5">{calendarText.today} ({todayDate})</h2>
+        <h1 className="font-bold text-2xl text-center my-7 text-white">Program TV - EPG</h1>
+        <h2 className="text-center font-bold text-4xl mt-8 mb-4 text-white drop-shadow-lg">{calendarText.today} ({todayDate})</h2>
         <AccordionBox programs={programsToday} />
-        <h2 className="text-center font-bold text-3xl mt-5">{calendarText.tomorrow}</h2>
+        <h2 className="text-center font-bold text-4xl mt-10 mb-4 text-white drop-shadow-lg">{calendarText.tomorrow}</h2>
         <AccordionBox programs={programsTomorrow} />
-        <h2 className="text-center font-bold text-3xl mt-5">{calendarText.future}</h2>
+        <h2 className="text-center font-bold text-4xl mt-10 mb-4 text-white drop-shadow-lg">{calendarText.future}</h2>
         <AccordionBox programs={programsFuture} />
       </div>
     </HeroUIProvider>

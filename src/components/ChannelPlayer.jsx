@@ -7,11 +7,11 @@ export default function (props) {
     <Link href={props.url} className="w-full">
       <Card
         isBlurred
-        className="max-w-[450px] mx-4 max-lg:w-full max-lg:my-3 hover:opacity-60 cursor-pointer"
-        shadow="sm"
+        className="max-w-[450px] mx-4 max-lg:w-full max-lg:my-3 bg-gradient-to-br from-zinc-800 to-zinc-950 hover:from-zinc-700 hover:to-zinc-900 cursor-pointer border border-zinc-700/60 hover:border-zinc-600/80 shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 rounded-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-1"
+        shadow="md"
       >
-        <Divider/>
-        <CardBody>
+        <Divider className="bg-zinc-700/30"/>
+        <CardBody className="p-5">
           <div className="grid grid-cols-12 gap-6 md:gap-4 items-center justify-center">
             <div className="relative col-span-6 md:col-span-4">
             <Image

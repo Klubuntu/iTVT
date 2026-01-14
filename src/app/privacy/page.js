@@ -46,23 +46,23 @@ const Page = () => {
             <FirstLoadPopup />
             <div className="App no-clickable stop-drag" ref={appRef}>
                 <NavbarWrapper headerText={headerText}/>
-                <div className="text-center max-w-[1000px] mx-5 sm:mx-4 max-mobile:mb-28 lg:mx-auto">
-                    <h2 className="font-bold text-2xl text-center my-7">{privacyText.about_us.title}</h2>
-                    <p>{privacyText.about_us.content}: <a href="https://files.itvt.xyz/download/android/">https://files.itvt.xyz/download/android/</a></p>
-                    <h2 className="font-bold text-2xl text-center my-7">{privacyText.media.title}</h2>
-                    <p>{privacyText.media.content}</p>
-                    <h2 className="font-bold text-2xl text-center my-7">{privacyText.cookies.title}</h2>
-                    <p>{privacyText.cookies.content}</p>
-                    <h2 className="font-bold text-2xl text-center my-7">{privacyText.embedded_data.title}</h2>
-                    <p>{privacyText.embedded_data.content.part1}</p>
-                    <p>{privacyText.embedded_data.content.part2}</p>
-                    <h2 className="font-bold text-2xl text-center my-7">{privacyText.keep_your_data.title}</h2>
-                    <p>{privacyText.keep_your_data.content.part1}</p>
-                    <p>{privacyText.keep_your_data.content.part2}</p>
-                    <h2 className="font-bold text-2xl text-center my-7">{privacyText.rights_your_data.title}</h2>
-                    <p>{privacyText.rights_your_data.content}</p>
-                    <h2 className="font-bold text-2xl text-center my-7">{privacyText.send_your_data.title}</h2>
-                    <p>{privacyText.send_your_data.content}</p>
+                <div className="text-center max-w-[1000px] mx-5 sm:mx-4 max-mobile:mb-28 lg:mx-auto bg-gradient-to-b from-zinc-900/80 to-black/90 backdrop-blur-sm rounded-2xl p-8 border border-zinc-700/40 shadow-2xl shadow-blue-500/15">
+                    <h2 className="font-bold text-3xl text-center my-8 text-white drop-shadow-lg">{privacyText.about_us.title}</h2>
+                    <p className="text-white leading-relaxed mb-4">{privacyText.about_us.content}: <a href="https://files.itvt.xyz/download/android/" className="text-blue-300 hover:text-blue-200 transition-colors hover:drop-shadow-md">https://files.itvt.xyz/download/android/</a></p>
+                    <h2 className="font-bold text-3xl text-center my-8 text-white drop-shadow-lg">{privacyText.media.title}</h2>
+                    <p className="text-white leading-relaxed mb-4">{privacyText.media.content}</p>
+                    <h2 className="font-bold text-3xl text-center my-8 text-white drop-shadow-lg">{privacyText.cookies.title}</h2>
+                    <p className="text-white leading-relaxed mb-4">{privacyText.cookies.content}</p>
+                    <h2 className="font-bold text-3xl text-center my-8 text-white drop-shadow-lg">{privacyText.embedded_data.title}</h2>
+                    <p className="text-white leading-relaxed mb-4">{privacyText.embedded_data.content.part1}</p>
+                    <p className="text-white leading-relaxed mb-4">{privacyText.embedded_data.content.part2}</p>
+                    <h2 className="font-bold text-3xl text-center my-8 text-white drop-shadow-lg">{privacyText.keep_your_data.title}</h2>
+                    <p className="text-white leading-relaxed mb-4">{privacyText.keep_your_data.content.part1}</p>
+                    <p className="text-white leading-relaxed mb-4">{privacyText.keep_your_data.content.part2}</p>
+                    <h2 className="font-bold text-3xl text-center my-8 text-white drop-shadow-lg">{privacyText.rights_your_data.title}</h2>
+                    <p className="text-white leading-relaxed mb-4">{privacyText.rights_your_data.content}</p>
+                    <h2 className="font-bold text-3xl text-center my-8 text-white drop-shadow-lg">{privacyText.send_your_data.title}</h2>
+                    <p className="text-white leading-relaxed mb-4">{privacyText.send_your_data.content}</p>
                 </div>
             </div>
         </HeroUIProvider>

@@ -34,7 +34,7 @@ function MobileMenuBlock() {
   };
 
   return (
-    <Navbar id="mobileMenu" className="select-none mobile:hidden m-4 rounded-md w-vw-header transition-colors duration-300 shadow-heade bg-zinc-900 fixed top-auto bottom-0 left-0 right-0 mx-auto mb-6">
+    <Navbar id="mobileMenu" className="select-none mobile:hidden m-4 rounded-xl w-vw-header transition-all duration-300 shadow-2xl shadow-blue-500/20 bg-zinc-900/95 backdrop-blur-md fixed top-auto bottom-0 left-0 right-0 mx-auto mb-6 border-t border-b border-zinc-700/50 hover:shadow-blue-500/30 hover:border-zinc-600/70">
       {/* Mobile Layout */}
       <NavbarContent className="flex gap-4 justify-between items-center w-full">
         {/* Navbar Items with Ripple Effect */}
